@@ -182,8 +182,50 @@ class User {
     this.role = role;
     this.isApproved = isApproved;
   }
+
+  //metodo
+  showUserName() {
+    console.log(`O nome do usuário é ${this.name}`);
+  }
+
+  //metodo
+  showUserRole(canShow: boolean) {
+    if (canShow) {
+      console.log(`O nome do usuário Administrador é: ${this.name}`);
+      return;
+    }
+    console.log(`Usuário sem permissão!`);
+  }
 }
 
 const zeca = new User("Zéca", "Admin", true);
 
 console.log(zeca);
+
+zeca.showUserName();
+
+zeca.showUserRole(true);
+
+// interfaces em classes
+interface IVehicle {
+  brand: string;
+  showBrand(): void;
+}
+
+class Car implements IVehicle {
+  brand;
+  wheels;
+
+  constructor(brand: string, wheels: number) {
+    this.brand = brand;
+    this.wheels = wheels;
+  }
+
+  showBrand(): void {
+    console.log(`A marca do carro é: ${this.brand}`);
+  }
+}
+
+const fusca = new Car("VW", 4);
+
+fusca.showBrand();

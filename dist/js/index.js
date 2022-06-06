@@ -113,6 +113,31 @@ class User {
         this.role = role;
         this.isApproved = isApproved;
     }
+    showUserName() {
+        console.log(`O nome do usuário é ${this.name}`);
+    }
+    showUserRole(canShow) {
+        if (canShow) {
+            console.log(`O nome do usuário Administrador é: ${this.name}`);
+            return;
+        }
+        console.log(`Usuário sem permissão!`);
+    }
 }
 const zeca = new User("Zéca", "Admin", true);
 console.log(zeca);
+zeca.showUserName();
+zeca.showUserRole(true);
+class Car {
+    brand;
+    wheels;
+    constructor(brand, wheels) {
+        this.brand = brand;
+        this.wheels = wheels;
+    }
+    showBrand() {
+        console.log(`A marca do carro é: ${this.brand}`);
+    }
+}
+const fusca = new Car("VW", 4);
+fusca.showBrand();
