@@ -104,3 +104,15 @@ const a1 = [1, 2, 3];
 const a2 = ["a", "b", "c"];
 showArraysItems(a1);
 showArraysItems(a2);
+class User {
+    name;
+    role;
+    isApproved;
+    constructor(name, role, isApproved) {
+        this.name = name;
+        this.role = role;
+        this.isApproved = isApproved;
+    }
+}
+const zeca = new User("Zéca", "Admin", true);
+console.log(zeca);
